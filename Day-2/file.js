@@ -1,13 +1,13 @@
 const fs = require('fs');
 
-fs.writeFileSync("./greet.txt", "Helloo!");
+fs.writeFileSync("./greet.txt", 'Helloo!');
 
 //doing this just overwrites the file
-fs.writeFile('./greet.txt', "Hey Mansi", (err) => { });
+// fs.writeFile('./greet.txt', "Hey Mansi", (err) => { });
 
 
 // To keep on adding the data
-fs.appendFileSync('./greet.txt', 'This is me, Universe!');
+fs.appendFileSync('./greet.txt', '\nThis is me, Universe!');
 
 
 
@@ -23,3 +23,9 @@ fs.readFile('./greet.txt', 'utf-8', (err, result) => {
         console.log(result);
     }
 })
+
+
+//copy and deleting files
+fs.cpSync('./greet.txt', './fakeGreet.txt');
+
+fs.unlinkSync('./fakeGreet.txt');
